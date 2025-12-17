@@ -13,4 +13,132 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  background-image: repeating-linear-gradient(
+      to bottom,
+      var(--background-gradient)
+    ),
+    repeating-linear-gradient(to right, var(--background-gradient)),
+    linear-gradient(#e7e7e7 0.01%, #1a1a1a);
+
+  background-blend-mode: normal;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: "Inter-Variable";
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  outline: 2px solid #000;
+  outline-offset: -2px;
+  min-width: clamp(23.438rem, 16.285rem + 30.516vw, 43.75rem);
+  min-height: clamp(20.438rem, 19.535rem + 3.85vw, 23rem);
+  margin-top: 100px;
+  margin-bottom: 98px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  font-family: "PressStart2P-Regular";
+}
+
+.header-logo {
+  font-size: clamp(3.063rem, 2.71rem + 1.502vw, 4.063rem);
+}
+
+.header-text {
+  font-size: clamp(0.875rem, 0.677rem + 0.845vw, 1.438rem);
+  text-transform: uppercase;
+}
+
+.main-block {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  width: clamp(23.438rem, 16.285rem + 30.516vw, 43.75rem);
+}
+
+.card {
+  outline: 2px solid #000;
+  outline-offset: -2px;
+  min-height: clamp(47.375rem, 43.018rem + 18.592vw, 59.75rem);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  font-size: 18px;
+  padding: 5px 12px 7px;
+}
+
+.card-image {
+  min-height: clamp(23.188rem, 16.035rem + 30.516vw, 43.5rem);
+  outline: 2px solid #000;
+  outline-offset: -2px;
+}
+
+.card-text-block {
+  padding: 27px 27px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.card-button {
+  min-height: 38px;
+  min-width: 130px;
+  margin-left: auto;
+  margin-right: 27px;
+  margin-bottom: 27px;
+  display: block;
+  background-color: #fff;
+  outline: 2px solid #000;
+  outline-offset: -2px;
+  font-family: "PressStart2P-Regular";
+  font-size: 14px;
+  padding-top: 2px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  min-height: 205px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.button-save {
+  margin-top: 50px;
+  min-height: 55px;
+  min-width: 335px;
+  outline: 2px solid #000;
+  outline-offset: -2px;
+  font-family: "PressStart2P-Regular";
+  font-size: 14px;
+}
+
+@media (width <= 375px) {
+  .header {
+    margin-bottom: 100px;
+  }
+
+  .card {
+    min-height: unset;
+  }
+
+  .button-save {
+    min-height: 84px;
+    min-width: 306px;
+  }
+
+  .footer {
+    min-height: 235px;
+  }
 }
