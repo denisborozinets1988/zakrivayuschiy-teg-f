@@ -87,6 +87,7 @@
   position: absolute;
   top: 25px;
   right: 25px;
+  text-transform: uppercase;
   font-family: "PressStart2P-Regular";
   font-size: 14px;
   opacity: 0.5;
@@ -159,10 +160,17 @@
   margin-right: 27px;
   margin-bottom: 27px;
 }
+.card__icon-button {
+  width: 39px;
+  height: 34px;
+  margin-top: 2px;
+}
+.card__icon-button:focus-visible {
+  outline: 2px solid #000000;
+  transition: 0.3s ease;
+}
 
 .like-icon {
-  width: 38px;
-  height: 38px;
   transform-origin: center;
 }
 
@@ -171,12 +179,12 @@
 }
 
 .like-icon:focus-visible {
-  outline: 2px solid #000000;
-  outline-offset: -2px;
-  transition: 0.3s ease;
 }
 
 /* Сердце */
+.heart-template {
+  display: none;
+}
 .heart {
 }
 
@@ -271,11 +279,11 @@
 }
 
 .card__like-button {
-  min-height: 38px;
   min-width: 130px;
+  min-height: 38px;
   background-color: #ffffff;
-  outline: 2px solid #000000;
-  outline-offset: -2px;
+  border: 2px solid #000000;
+
   font-family: "PressStart2P-Regular";
   font-size: 14px;
   padding-top: 2px;
@@ -327,17 +335,73 @@
 }
 
 .button-save {
-  margin-top: 50px;
-  min-height: 55px;
-  min-width: 335px;
+  margin-top: 52px;
+  min-height: 51px;
+  min-width: 331px;
   outline: 2px solid #000;
-  outline-offset: -2px;
   font-family: "PressStart2P-Regular";
   font-size: 14px;
+  background-color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 7px;
+}
+.dialog-save {
+  outline: 2px solid #000;
+}
+.dialog {
+  /* opacity: 0.5; */
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  min-height: 187px;
+  max-width: 353px;
+  margin-bottom: 5px;
+}
+
+.dialog-save {
+}
+
+.button-ok {
+  outline: 2px solid #000;
+  font-family: "PressStart2P-Regular";
+  font-size: 14px;
+  min-height: 32px;
+  min-width: 286px;
+  margin-bottom: 10px;
+}
+
+.dialog-header {
+  display: flex;
+  align-items: center;
+  max-width: 300px;
+  margin-top: 31px;
+  margin-left: 31px;
+  margin-right: 32px;
+  gap: 20px;
+}
+
+.dialog-text {
+  font-family: "PressStart2P-Regular";
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: uppercase;
+}
+
+.floppy-dialog {
+  margin-top: 2px;
+  width: 39px;
+  height: 39px;
+}
+
+dialog::backdrop {
+  position: fixed;
+  inset: 0px;
+  background: #000;
+  opacity: 0.75;
 }
 
 .floppy-button {
@@ -355,8 +419,8 @@
   }
 
   .button-save {
-    min-height: 84px;
-    min-width: 306px;
+    min-height: 80px;
+    min-width: 302px;
     flex-direction: column;
   }
 
@@ -367,5 +431,14 @@
 
   .footer {
     min-height: 235px;
+  }
+
+  .dialog-header {
+    margin-left: 38px;
+    margin-top: 29px;
+  }
+
+  .button-ok {
+    min-width: 257px;
   }
 }

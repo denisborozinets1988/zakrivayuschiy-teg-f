@@ -32,13 +32,15 @@ a {
 }
 
 button,
-input {
+input,
+dialog {
   color: currentColor;
   font-family: inherit;
   font-size: inherit;
   border: none;
   background-color: unset;
   padding: 0;
+  outline: none;
 }
 
 ul,
