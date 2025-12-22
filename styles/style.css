@@ -11,16 +11,19 @@
   background-blend-mode: normal;
   background-size: cover;
   background-attachment: fixed;
-  font-family: "Inter-Variable";
+  font-family: var(--font-inter);
   font-variation-settings: "wght" var(--wght);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.header {
-  outline: 2px solid #000;
+.simple-block {
+  outline: var(--outline);
   outline-offset: -2px;
+}
+
+.header {
   min-width: clamp(23.438rem, 16.285rem + 30.516vw, 43.75rem);
   min-height: clamp(20.438rem, 19.535rem + 3.85vw, 23rem);
   margin-top: 100px;
@@ -30,8 +33,8 @@
   gap: 20px;
   align-items: center;
   justify-content: center;
-  background-color: #fff;
-  font-family: "PressStart2P-Regular";
+  background-color: var(--color-background);
+  font-family: var(--font-press);
 }
 
 .header-logo {
@@ -51,45 +54,23 @@
 }
 
 .card {
-  outline: 2px solid #000;
-  outline-offset: -2px;
   min-height: clamp(47.375rem, 43.018rem + 18.592vw, 59.75rem);
-  background-color: #fff;
+  background-color: var(--color-background);
   display: flex;
   flex-direction: column;
 }
 
 .card-header {
-  font-size: 18px;
+  font-size: var(--font-size-header);
   padding: 7px 12px 3px;
   font-variation-settings: "wght" var(--wght);
 }
 
 .card-image-container {
   height: clamp(23.188rem, 16.035rem + 30.516vw, 43.5rem);
-  outline: 2px solid #000;
+  outline: var(--outline);
   margin: 2px;
   position: relative;
-}
-
-.label {
-  position: absolute;
-  top: 25px;
-  right: 25px;
-  text-transform: uppercase;
-  font-family: "PressStart2P-Regular";
-  font-size: 14px;
-  opacity: 0.5;
-  text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff,
-    1px 1px 0 #ffffff;
-  -webkit-text-stroke: 1px #fff;
-  mix-blend-mode: hard-light;
-}
-
-@supports (text-stroke: 1px #fff) {
-  .label {
-    text-stroke: 1px #fff;
-  }
 }
 
 .card-image {
@@ -132,12 +113,33 @@
   filter: contrast(80%);
 }
 
+.label {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  text-transform: uppercase;
+  font-family: var(--font-press);
+  font-size: var(--font-size-text);
+  opacity: 0.5;
+  text-shadow: -1px -1px 0 var(--color-background),
+    1px -1px 0 var(--color-background), -1px 1px 0 var(--color-background),
+    1px 1px 0 var(--color-background);
+  -webkit-text-stroke: 1px var(--color-background);
+  mix-blend-mode: hard-light;
+}
+
+@supports (text-stroke: 1px var(--color-background)) {
+  .label {
+    text-stroke: 1px var(--color-background);
+  }
+}
+
 .card-text-block {
   padding: 25px 27px;
   display: flex;
   flex-direction: column;
   gap: 25px;
-  font-size: 18px;
+  font-size: var(--font-size-header);
   line-height: 21px;
 }
 
@@ -148,13 +150,16 @@
   margin-right: 27px;
   margin-bottom: 27px;
 }
+
+/* Кнопка сердца */
+
 .card__icon-button {
   width: 39px;
   height: 34px;
   margin-top: 2px;
 }
 .card__icon-button:focus-visible {
-  outline: 2px solid #000000;
+  outline: var(--outline);
   transition: 0.3s ease;
 }
 
@@ -166,7 +171,7 @@
   outline: none;
 }
 
-/* Сердце */
+/* Анимация сердца */
 
 .contour {
   transition-duration: 0.1s;
@@ -195,44 +200,44 @@
 .like-icon:hover .core {
   transition-duration: 0.3s;
   transition-timing-function: linear;
-  fill: rgb(0, 0, 0);
+  fill: var(--color-text);
 }
 
 .like-icon:hover .main-body {
-  fill: rgb(0, 0, 0);
   transition-delay: 0.05s;
   transition-duration: 0.5s;
   transition-timing-function: linear;
+  fill: var(--color-text);
 }
 
 .like-icon:active .core {
   transition-duration: 0.3s;
   transition-timing-function: linear;
-  fill: rgb(255, 0, 0);
+  fill: var(--color-accent);
 }
 
 .like-icon:active .main-body {
-  fill: rgb(255, 0, 0);
+  fill: var(--color-accent);
   transition-delay: 0.05s;
   transition-duration: 0.5s;
   transition-timing-function: linear;
 }
 
 .like-icon.is-liked .contour {
-  fill: rgb(255, 0, 0);
+  fill: var(--color-accent);
   transition-delay: 0.06s;
   transition-duration: 0.3s;
   transition-timing-function: linear;
 }
 
 .like-icon.is-liked .core {
-  fill: rgb(255, 0, 0);
+  fill: var(--color-accent);
   transition-duration: 0.3s;
   transition-timing-function: linear;
 }
 
 .like-icon.is-liked .main-body {
-  fill: rgb(255, 0, 0);
+  fill: var(--color-accent);
   transition-delay: 0.05s;
   transition-duration: 0.3s;
   transition-timing-function: linear;
@@ -254,18 +259,20 @@
 
 @keyframes sparks-click {
   to {
-    fill: red;
+    fill: var(--color-accent);
   }
 }
+
+/* Кнопка like */
 
 .card__like-button {
   min-width: 130px;
   min-height: 38px;
-  background-color: #ffffff;
-  border: 2px solid #000000;
+  background-color: var(--color-background);
+  border: var(--outline);
 
-  font-family: "PressStart2P-Regular";
-  font-size: 14px;
+  font-family: var(--font-press);
+  font-size: var(--font-size-text);
   padding-top: 2px;
   box-shadow: unset;
   transition: 0.3s ease;
@@ -274,19 +281,19 @@
 
 .button__text {
   mix-blend-mode: difference;
-  color: #ffffff;
+  color: var(--color-background);
   z-index: 1;
   position: relative;
 }
 
 .card__like-button:focus {
-  box-shadow: 2px 2px #000;
+  box-shadow: 2px 2px var(--color-text);
   transition: 0.3s ease;
 }
 
 .card__like-button::after {
   content: "";
-  background-color: #000000;
+  background-color: var(--color-text);
   position: absolute;
   width: 100%;
   height: 100%;
@@ -301,6 +308,7 @@
   transform: scale(1, 1);
 }
 
+/* Подвал */
 .footer {
   display: flex;
   flex-direction: column;
@@ -309,25 +317,27 @@
   justify-content: flex-start;
 }
 
+/* Кнопка сохранить на память */
+
 .button-save {
   margin-top: 52px;
   min-height: 51px;
   min-width: 331px;
-  outline: 2px solid #000;
-  font-family: "PressStart2P-Regular";
-  font-size: 14px;
-  background-color: #fff;
+  outline: var(--outline);
+  font-family: var(--font-press);
+  font-size: var(--font-size-text);
+  background-color: var(--color-background);
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 7px;
 }
-.dialog-save {
-  outline: 2px solid #000;
-}
+
+/* Диалог по кнопке сохранить на память */
+
 .dialog {
   /* opacity: 0.5; */
-  background-color: #fff;
+  background-color: var(--color-background);
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -337,9 +347,9 @@
 }
 
 .button-ok {
-  outline: 2px solid #000;
-  font-family: "PressStart2P-Regular";
-  font-size: 14px;
+  outline: var(--outline);
+  font-family: var(--font-press);
+  font-size: var(--font-size-text);
   min-height: 32px;
   min-width: 286px;
   margin-bottom: 10px;
@@ -356,8 +366,8 @@
 }
 
 .dialog-text {
-  font-family: "PressStart2P-Regular";
-  font-size: 14px;
+  font-family: var(--font-press);
+  font-size: var(--font-size-text);
   line-height: 150%;
   text-transform: uppercase;
 }
@@ -371,7 +381,7 @@
 dialog::backdrop {
   position: fixed;
   inset: 0px;
-  background: #000;
+  background: var(--color-text);
   opacity: 0.75;
 }
 
