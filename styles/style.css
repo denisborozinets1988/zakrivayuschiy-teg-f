@@ -20,7 +20,7 @@
 
 .simple-block {
   outline: var(--outline);
-  outline-offset: -2px;
+  background-color: var(--color-background);
 }
 
 .header {
@@ -33,7 +33,6 @@
   gap: 20px;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-background);
   font-family: var(--font-press);
 }
 
@@ -55,8 +54,8 @@
 
 .card {
   min-height: clamp(47.375rem, 43.018rem + 18.592vw, 59.75rem);
-  background-color: var(--color-background);
   display: flex;
+  outline-offset: -2px;
   flex-direction: column;
 }
 
@@ -84,27 +83,27 @@
   object-position: -160px;
 }
 
-.card-image-sprint1_start {
+.card-image-sprint1-start {
   filter: saturate(50%);
 }
 
-.card-image-sprint1_finish {
+.card-image-sprint1-finish {
   filter: brightness(200%);
 }
 
-.card-image-sprint2_start {
+.card-image-sprint2-start {
   filter: hue-rotate(90deg);
 }
 
-.card-image-sprint2_finish {
+.card-image-sprint2-finish {
   filter: invert(0.9) hue-rotate(180deg);
 }
 
-.card-image-sprint3_start {
+.card-image-sprint3-start {
   filter: sepia(100%);
 }
 
-.card-image-sprint3_finish {
+.card-image-sprint3-finish {
   filter: blur(5px);
   object-position: 0px;
 }
@@ -334,16 +333,19 @@
 }
 
 /* Диалог по кнопке сохранить на память */
+.dialog-save {
+  top: -4px;
+}
 
 .dialog {
   /* opacity: 0.5; */
   background-color: var(--color-background);
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 33px;
   align-items: center;
   min-height: 187px;
-  max-width: 353px;
+  max-width: 349px;
 }
 
 .button-ok {
@@ -360,7 +362,7 @@
   align-items: center;
   max-width: 300px;
   margin-top: 31px;
-  margin-left: 31px;
+  margin-left: 29px;
   margin-right: 32px;
   gap: 20px;
 }
@@ -393,6 +395,7 @@ dialog::backdrop {
 @media (width <= 375px) {
   .header {
     margin-bottom: 100px;
+    outline-offset: -2px;
   }
 
   .card {
@@ -412,6 +415,14 @@ dialog::backdrop {
 
   .footer {
     min-height: 235px;
+  }
+
+  .dialog-save {
+    top: -6px;
+  }
+
+  .dialog {
+    gap: 32px;
   }
 
   .dialog-header {
