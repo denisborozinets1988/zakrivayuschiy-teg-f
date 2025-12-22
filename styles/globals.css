@@ -25,6 +25,7 @@ li,
 figure {
   margin: 0;
   padding: 0;
+  font-weight: normal;
 }
 
 a {
