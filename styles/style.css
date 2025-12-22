@@ -82,7 +82,14 @@
   opacity: 0.5;
   text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff,
     1px 1px 0 #ffffff;
+  -webkit-text-stroke: 1px #fff;
   mix-blend-mode: hard-light;
+}
+
+@supports (text-stroke: 1px #fff) {
+  .label {
+    text-stroke: 1px #fff;
+  }
 }
 
 .card-image {
