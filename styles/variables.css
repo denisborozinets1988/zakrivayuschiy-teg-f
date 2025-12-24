@@ -1,7 +1,7 @@
 :root {
   --background-gradient: transparent, transparent 2px, #d3d3d3 2px, #d3d3d3 4px;
   --font-inter: "Inter-Variable", "Arial", sans-serif;
-  --font-press: "PressStart2P-Regular", "Arial", sans-serif;
+  --font-press: "PressStart2P", "fantasy", serif;
   --font-size-header: 18px;
   --font-size-text: 14px;
   --wght: 410;
